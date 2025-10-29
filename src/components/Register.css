@@ -1,40 +1,132 @@
+/* --- Variables Globales y Reset Básico --- */
 :root {
-  /* --- Tonos Rojo Sangre --- */
-  
-  /* El color principal: un rojo sangre muy oscuro, casi negro. */
-  --color-sangre-oscuro: #6d0000;
-  
-  /* Un rojo primario fuerte para acentos principales (botones, enlaces). */
-  --color-rojo-primario: #a31b1b;
-
-  /* --- Tonos Rosados --- */
-  
-  /* Un rosa "polvoriento" o "palo de rosa" para acentos secundarios. */
-  --color-rosa-acento: #d48a8a;
-  
-  /* Un fondo muy claro con un leve tinte rosado. */
-  --color-fondo-claro: #f9ebeb;
-
-  /* --- Neutros Complementarios --- */
-  
-  /* Texto oscuro (casi negro, pero con un matiz rojo oscuro). */
-  --color-texto-oscuro: #2a1d1d;
-  
-  /* Texto claro (para usar sobre los fondos oscuros). */
-  --color-texto-claro: #fdf7f7;
+  --primary-color: #007bff; /* Color principal de tu marca */
+  --primary-hover: #0056b3; /* Color para hover */
+  --light-gray: #f0f2f5;    /* Color de fondo de la página */
+  --border-color: #ddd;     /* Color de bordes de inputs */
+  --text-dark: #333;       /* Texto principal */
+  --text-light: #666;      /* Texto secundario */
+  --white: #ffffff;
+  --error-color: #e74c3c;
 }
-.formTitle{
-    font-size: 3rem;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  background-color: var(--light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  box-sizing: border-box;
 }
-.RegisterContainer{
-    width: 20em;
-    height: auto;
-    background-color: var(--color-rosa-acento);
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    margin-top: 20vh;
+
+/* --- El Contenedor Principal --- */
+.register-container {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box; /* Asegura que el padding no desborde */
+}
+
+.register-container h2 {
+  text-align: center;
+  color: var(--text-dark);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.register-container p {
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* --- Formulario y Campos (Inputs) --- */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-sizing: border-box; /* Crucial para el padding */
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* --- Estado Focus (¡Clave para UX!) --- */
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+
+
+.password-wrapper input {
+  /* Deja espacio a la derecha para el ícono */
+  padding-right: 3rem;
+}
+
+
+
+/* --- Botón de Envío (CTA) --- */
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.submit-btn:disabled {
+  background-color: #b0c4de; /* Un azul "apagado" */
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* --- Link para Iniciar Sesión --- */
+.switch-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.switch-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.switch-link a:hover {
+  text-decoration: underline;
 }
