@@ -1,0 +1,40 @@
+:root {
+  /* --- Tonos Rojo Sangre --- */
+  
+  /* El color principal: un rojo sangre muy oscuro, casi negro. */
+  --color-sangre-oscuro: #6d0000;
+  
+  /* Un rojo primario fuerte para acentos principales (botones, enlaces). */
+  --color-rojo-primario: #a31b1b;
+
+  /* --- Tonos Rosados --- */
+  
+  /* Un rosa "polvoriento" o "palo de rosa" para acentos secundarios. */
+  --color-rosa-acento: #d48a8a;
+  
+  /* Un fondo muy claro con un leve tinte rosado. */
+  --color-fondo-claro: #f9ebeb;
+
+  /* --- Neutros Complementarios --- */
+  
+  /* Texto oscuro (casi negro, pero con un matiz rojo oscuro). */
+  --color-texto-oscuro: #2a1d1d;
+  
+  /* Texto claro (para usar sobre los fondos oscuros). */
+  --color-texto-claro: #fdf7f7;
+}
+.formTitle{
+    font-size: 3rem;
+}
+.RegisterContainer{
+    width: 20em;
+    height: auto;
+    background-color: var(--color-rosa-acento);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 20vh;
+}
