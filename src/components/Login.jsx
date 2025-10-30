@@ -1,10 +1,15 @@
 import { useForm } from "../hooks/UseForm";
 
-export const Login = () => {
+export const Login = ({handleLogin}) => {
     const {formData,handleChange ,handleReset} = useForm({
         username: "",
         password: ""
     });
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        handleLogin(formData.username),
+        handleReset();
+    }
   return (
     <div className='register-container'>
         <h2>Login</h2>
@@ -34,7 +39,7 @@ export const Login = () => {
               />
             </div>
           </div>
-          <button type="submit"  onClick={handleReset} className="submit-btn">
+          <button type="submit" onClick={handleSubmit} className="submit-btn">
             hecho
           </button>
         </form>
