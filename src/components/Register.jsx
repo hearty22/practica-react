@@ -8,70 +8,70 @@ export const Register = () => {
     email: "",
     password: ""
   });
+  const { lastname, firstname, username, email, password } = formData;
   return (
     <div className='register-container'>
         <h2>Register</h2>
       <form id="register-form">
-          <div class="form-group">
-            <label for="lastname">lastname</label>
+          <div className="form-group">
+            <label htmlFor="lastname">lastname</label>
             <input
               type="text"
               id="lastname"
               name="lastname"
-              value={formData.lastname}
+              value={lastname}
               onChange={handleChange}
               required
             />
           </div>
-          <div class="form-group">
-            <label for="firstname">firstname</label>
+          <div className="form-group">
+            <label htmlFor="firstname">firstname</label>
             <input
               type="text"
               id="firstname"
               name="firstname"
-              value={formData.firstname}
+              value={firstname}
               onChange={handleChange}
               required
             />
           </div>
-          <div class="form-group">
-            <label for="username">username</label>
+          <div className="form-group">
+            <label htmlFor="username">username</label>
             <input
               type="text"
               id="username"
               name="username"
-              value={formData.username}
+              value={username}
               onChange={handleChange}
               required
             />
           </div>
-          <div class="form-group">
-            <label for="email">Correo electrónico</label>
+          <div className="form-group">
+            <label htmlFor="email">Correo electrónico</label>
             <input
               type="email"
               id="email"
               name="email"
-              value={formData.email}
+              value={email}
               onChange={handleChange}
               required
             />
           </div>
-          <div class="form-group">
-            <label for="password">Contraseña</label>
+          <div className="form-group">
+            <label htmlFor="password">Contraseña</label>
             <div class="password-wrapper">
               <input
                 type="password"
                 id="password"
                 name="password"
-                value={formData.password}
+                value={password}
                 onChange={handleChange}
                 required
               />
             </div>
           </div>
-          <button type="submit" onClick={handleReset} class="submit-btn">
+          <button type="submit" onClick={handleReset} className="submit-btn">
             hecho
-          
           </button>
         </form>
     </div>
