@@ -12,7 +12,7 @@ export const CharacterInfo = () => {
     }
     setCounter(counter - 1);
   };
-  
+
   let { characterData, isLoading, hasError } = useFetch(counter);
   const { name, gender, age, occupation } = characterData;
   return (
@@ -22,17 +22,23 @@ export const CharacterInfo = () => {
           {isLoading && <p className="loading">Cargando personaje...</p>}
           {hasError && <p className="error">Error al cargar el personaje.</p>}
           {!isLoading && !hasError && (
-            <h3 className="data-item">name: {name}</h3>
+            <h3 className="data-item">name: {name ? name : "?"}</h3>
           )}
           {!isLoading && !hasError && (
-            <h3 className="data-item">gender: {gender}</h3>
+            <h3 className="data-item">gender: {gender ? gender : "?"}</h3>
           )}
-          {!isLoading && !hasError && <h3 className="data-item">age: {age}</h3>}
+          {!isLoading && !hasError && <h3 className="data-item">age: {age ? age : "?"}</h3>}
           {!isLoading && !hasError && (
-            <h3 className="data-item">occupation: {occupation}</h3>
+            <h3 className="data-item">occupation: {occupation ? occupation : "?"}</h3>
           )}
         </div>
-        <div className="grid-container-image"><img src={`https://cdn.thesimpsonsapi.com/200/character/${counter}.webp`} alt={name} /></div>
+        <div className="grid-container-image">
+          <img
+            className="character-img"
+            src={`https://cdn.thesimpsonsapi.com/500/character/${counter}.webp`}
+            alt={name}
+          />
+        </div>
       </div>
       <div className="grid-container-counter">
         <button
