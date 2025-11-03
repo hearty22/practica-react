@@ -1,17 +1,9 @@
-import React, { useState } from "react";
+import { useCounter } from "../hooks/useCounter";
 import "./CharacterInfo.css";
 import { useFetch } from "../hooks/useFetch";
+import { Loading } from "./Loading";
 export const CharacterInfo = () => {
-  const [counter, setCounter] = useState(1);
-  const handleIncrementCounter = () => {
-    setCounter(counter + 1);
-  };
-  const handleDecrementCounter = () => {
-    if (counter <= 1) {
-      return;
-    }
-    setCounter(counter - 1);
-  };
+  const {counter, handleDecrementCounter, handleIncrementCounter} = useCounter();
 
   let { characterData, isLoading, hasError } = useFetch(counter);
   const { name, gender, age, occupation } = characterData;
@@ -19,7 +11,7 @@ export const CharacterInfo = () => {
     <div>
       <div className="data-container">
         <div className="grid-container">
-          {isLoading && <p className="loading">Cargando personaje...</p>}
+          {isLoading && <Loading/>}
           {hasError && <p className="error">Error al cargar el personaje.</p>}
           {!isLoading && !hasError && (
             <h3 className="data-item">name: {name ? name : "?"}</h3>
@@ -43,7 +35,7 @@ export const CharacterInfo = () => {
       <div className="grid-container-counter">
         <button
           onClick={handleDecrementCounter}
-          disabled={isLoading || counter == 1}
+          disabled={isLoading || counter == 1}            
         >
           -1
         </button>
