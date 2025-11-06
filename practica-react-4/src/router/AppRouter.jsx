@@ -1,20 +1,21 @@
-import React from "react";
 import { Route, Routes } from "react-router";
-import { Login } from "../pages/Login";
-import { Register } from "../pages/Register";
+import { Login } from "../pages/LoginPage";
+import { Register } from "../pages/RegisterPage";
 import { PublicRoutes } from "./PublicRoutes";
 import { PrivateRoutes } from "./PrivateRoutes";
-import { Home } from "../pages/Home";
+import { HomePage } from "../pages/HomePage";
+
 export const AppRouter = () => {
   return (
     <Routes>
-        
-      <Route path="/" element={<PublicRoutes/>}>
-        <Route path="login" element={<Login/>} />
-        <Route path="register" element={<Register/>} />
+      <Route element={<PublicRoutes />}>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="*" element={<Login />} />
       </Route>
-      <Route path="/" element={<PrivateRoutes/>}>
-        <Route path="/home" element={<Home/>}/>
+      <Route element={<PrivateRoutes />}>
+        <Route path="/home" element={<HomePage />} />
+        <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>
   );

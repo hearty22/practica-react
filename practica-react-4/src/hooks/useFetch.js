@@ -38,6 +38,7 @@ export const useFetch = (value) => {
     getData();
   }, [value]);
 
+
   return {
     characterData,
     isLoading,

@@ -1,18 +1,21 @@
+// import { useCounter } from "./hooks/useCounter";
+// import { useFetch } from "./hooks/useFetch";
+// import { Loading } from "../components/Loading";
 import { useCounter } from "../hooks/useCounter";
 import { useFetch } from "../hooks/useFetch";
-import { Loading } from "../components/Loading";
-import { Navbar } from "../components/Navbar";
-export const Home = () => {
+import { Loading } from "./Loading";
+import '../css/CharacterInfo.css';
+
+export const CharacterInfo = () => {
   const { counter, handleDecrementCounter, handleIncrementCounter } =
-    useCounter();
+    useCounter(1);
 
   let { characterData, isLoading, hasError } = useFetch(counter);
   const { name, gender, age, occupation } = characterData;
   return (
       <div>
-        <Navbar/>
       <div className="data-container">
-        <div className="grid-container">
+        <div className="character-card">
           {isLoading && <Loading />}
           {hasError && <p className="error">Error al cargar el personaje.</p>}
           {!isLoading && !hasError && (
@@ -30,7 +33,7 @@ export const Home = () => {
             </h3>
           )}
         </div>
-        <div className="grid-container-image">
+        <div className="image-card">
           <img
             className="character-img"
             src={`https://cdn.thesimpsonsapi.com/500/character/${counter}.webp`}

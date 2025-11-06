@@ -1,4 +1,6 @@
 import { useForm } from "../hooks/useForm";
+import '../css/LoginPage.css';
+import { Link } from "react-router";
 export const Register = () => {
   let { formData, handleChange, handleReset } = useForm({
     lastname: "",
@@ -72,6 +74,8 @@ export const Register = () => {
           <button type="submit" onClick={handleReset} className="submit-btn">
             hecho
           </button>
+          <p>¿Ya tienes una cuenta? <Link to="/login">Inicia sesion</Link> </p>
+
         </form>
     </div>
   )

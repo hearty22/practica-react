@@ -1,0 +1,88 @@
+/* src/css/CharacterInfo.css */
+
+.data-container {
+  display: flex;
+  flex-direction: row; /* Changed to row to place cards side-by-side */
+  justify-content: center; /* Center the cards horizontally */
+  gap: 20px; /* Space between the cards */
+  margin-top: 20px;
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+.character-card,
+.image-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  max-width: 350px; /* Increased card width */
+  width: 100%; /* Ensure cards take full width on smaller screens */
+  background-color: #f9f9f9; /* Light background for the card */
+  border: 1px solid #ddd; /* Subtle border */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+}
+
+.character-card:hover,
+.image-card:hover {
+  transform: translateY(-5px);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.data-item {
+  font-size: 1.3rem; /* Slightly larger font size */
+  color: #222; /* Darker color for better contrast */
+  margin: 5px 0; /* Add some vertical margin */
+  padding: 5px 10px; /* Add padding to data items */
+  background-color: #e9ecef; /* Light background for data items */
+  border-radius: 5px; /* Rounded corners for data items */
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.grid-container-image {
+  margin-bottom: 20px;
+}
+
+.character-img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container-counter {
+  display: flex;
+  gap: 10px;
+  justify-content: center; /* Centered buttons */
+  width: 100%; /* Ensure it takes full width to center properly */
+}
+
+.grid-container-counter button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+}
+
+.grid-container-counter button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
